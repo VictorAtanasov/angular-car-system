@@ -1,1 +1,7 @@
+<a routerLink="home">Home</a>
 <a routerLink="users/register">Register</a>
+<a routerLink="users/login">Login</a>
+<a routerLink="cars/add" [hidden]="isUser">Add a car</a>
+<a routerLink="cars/mine" [hidden]="isUser">My cars</a>
+<a routerLink="cars/all">All cars</a>
+<button (click)="logOut()" [hidden]="isUser">Logout</button>

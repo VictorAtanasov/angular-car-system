@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { HttpService } from './http.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   imports: [
@@ -10,11 +11,15 @@ import { HttpService } from './http.service';
     RouterModule
   ],
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    MessagesComponent
   ],
   providers: [
     HttpService
   ],
-  exports: [NavbarComponent]
+  exports: [
+    NavbarComponent,
+    MessagesComponent
+  ]
 })
 export class CoreModule { }

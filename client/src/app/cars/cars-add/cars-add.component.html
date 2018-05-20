@@ -1,0 +1,109 @@
+<h2>Add new car</h2>
+
+<form #carForm="ngForm" (ngSubmit)="addCar()">
+
+  <div>
+    <label for="make">Make</label>
+    <input 
+      type="text" 
+      id="make"
+      name="make"
+      [(ngModel)]="car.make"
+      #make="ngModel"
+      required />
+      <span [hidden] = "make.valid || make.pristine">
+        Make is required!
+      </span>
+  </div>
+
+  <div>
+    <label for="model">Model</label>
+    <input 
+      type="text" 
+      id="model"
+      name="model"
+      [(ngModel)]="car.model"
+      #model="ngModel"
+      required />
+      <span [hidden] = "model.valid || model.pristine">
+        Model is required!
+      </span>
+  </div>
+
+  <div>
+    <label for="year">Year</label>
+    <input 
+      type="text" 
+      id="year"
+      name="year"
+      [(ngModel)]="car.year"
+      #year="ngModel"
+      required />
+      <span [hidden] = "year.valid || year.pristine">
+        Year is required!
+      </span>
+  </div>
+
+  <div>
+    <label for="make">Engine</label>
+    <input 
+      type="text" 
+      id="engine"
+      name="engine"
+      [(ngModel)]="car.engine"
+      #engine="ngModel"
+      required />
+      <span [hidden] = "engine.valid || engine.pristine">
+        Engine is required!
+      </span>
+  </div>
+
+  <div>
+    <label for="price">Price</label>
+    <input 
+      type="text" 
+      id="price"
+      name="price"
+      [(ngModel)]="car.price"
+      #price="ngModel"
+      required />
+      <span [hidden] = "price.valid || price.pristine">
+        Price is required!
+      </span>
+  </div>
+
+  <div>
+    <label for="image">Image</label>
+    <input 
+      type="text" 
+      id="image"
+      name="image"
+      [(ngModel)]="car.image"
+      #image="ngModel"
+      required />
+      <span [hidden] = "image.valid || image.pristine">
+        Image is required!
+      </span>
+  </div>
+
+  <div>
+    <label for="mileage">Mileage</label>
+    <input 
+      type="text" 
+      id="mileage"
+      name="mileage"
+      [(ngModel)]="car.mileage"
+      #mileage="ngModel" />
+  </div>
+
+  
+
+  <button
+    [disabled]="!carForm.form.valid"
+    type="submit">
+    Add a Car
+  </button>
+
+</form>
+
+<app-messages [message] = "message"></app-messages>

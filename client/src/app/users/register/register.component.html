@@ -59,9 +59,11 @@
   </div>
 
   <button
-    [disabled]="!registerForm.form.valid || password.value !== confirmPassword.value"
+    [disabled]="!registerForm.form.valid"
     type="submit">
     Register
   </button>
 
 </form>
+
+<app-messages [message] = "message"></app-messages>

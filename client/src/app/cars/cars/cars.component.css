@@ -1,0 +1,10 @@
+.image {
+    width: 150px;
+}
+
+.carBox {
+    width: auto;
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px 10px;
+}

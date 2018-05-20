@@ -1,0 +1,9 @@
+.image {
+    width: auto;
+    max-width: 350px;
+}
+
+.wrapper {
+    width: 100%;
+    text-align: center
+}

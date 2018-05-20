@@ -1,0 +1,17 @@
+<h2>
+  My Cars
+</h2>
+
+
+<div *ngFor="let car of cars" class="carBox">
+  <a routerLink="/cars/{{car.id}}">
+    <h2>{{car.make}}</h2>
+    <h4>{{car.model}}</h4>
+    <img src={{car.image}} alt="" class="image">
+  </a>
+  <button (click)="deleteCar(car.id)">Delete car</button>
+</div>
+
+
+
+<p>{{message}}</p>

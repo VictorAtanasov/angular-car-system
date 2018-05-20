@@ -6,23 +6,32 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './users/register.component';
+import { RegisterModule } from './users/register.module';
 import { CoreModule } from './core/core.module';
+import { UsersService } from './users/users.service';
+import { HomeComponent } from './home/home.component';
+import { CarsService } from './cars/cars.service';
+import { CarsModule } from './cars/cars.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    RegisterModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    CarsModule,
   ],
-  providers: [],
+  providers: [
+    UsersService,
+    CarsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

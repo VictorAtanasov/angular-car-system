@@ -1,0 +1,57 @@
+<div class="wrapper">
+    <img src={{car.image}} alt="" class="image">
+    <h2>
+      {{car.make}}
+    </h2>
+    <h3>
+      {{car.model}}
+    </h3>
+    <p>
+        <strong>Engine:</strong> {{car.engine}}
+    </p>
+    <p>
+        <strong>Price:</strong> {{car.price}}
+    </p>
+    <p>
+      <strong>Year:</strong> {{car.year}}
+    </p>
+    <p>
+      <strong>Likes:</strong> {{car.likes}}
+    </p>
+    <button (click)="like()" [disabled]="liked">Like</button>
+    <p>{{message}}</p>
+    <br />
+
+    <h4>Reviews</h4>
+
+    <div *ngIf="ifReviews; else noReviews">
+      <p *ngFor="let review of reviews">
+        <strong>Comment:</strong> <span>{{review.comment}}</span>
+        <strong>Rating:</strong>  <span>{{review.rating}}</span>
+        <strong>User:</strong> <span>{{review.user}}</span>
+      </p>
+    </div>
+    <div>
+      <ng-template #noReviews>
+          No reviews
+      </ng-template>
+    </div>
+    
+
+    <br />
+    <div>
+      <h4>Add Review</h4>
+      <label>Text</label>
+      <input type="text" #input />
+      <label>Rating</label>
+      <select #select required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button (click)="comment(input.value, select.value)">Comment</button>
+      <p>{{reviewMessage}}</p>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<h1>
+  All Cars
+</h1>
+
+<div>
+  <input type="text" #input />
+  <button (click)="search(input.value)">Search</button>
+</div>
+
+<br />
+
+<div *ngFor="let car of cars" class="carBox">
+  <a routerLink="/cars/{{car.id}}">
+    <h2>{{car.make}}</h2>
+    <h4>{{car.model}}</h4>
+    <img src={{car.image}} alt="" class="image">
+  </a>
+</div>
+
+<p>{{message}}</p>
+
+<button (click)="prevPage()">Previous Page</button>
+<button (click)="nextPage()">Next Page</button>
